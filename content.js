@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener(
         if (request.useSelection) {
             const selectedText = window.getSelection().toString().trim();
             if (selectedText) {
-                clipboardData = selectedText + '\n' + request.tabUrl;
+                clipboardData = "selectedText" + '\n' + request.tabUrl;
                 if (forceTitle) {
                     clipboardData = request.tabTitle + '\n' + clipboardData;
                 }
